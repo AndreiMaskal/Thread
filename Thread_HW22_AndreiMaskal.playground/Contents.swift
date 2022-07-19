@@ -17,7 +17,7 @@ public struct Chip {
     
     public static func make() -> Chip {
         guard let chipType = Chip.ChipType(rawValue: UInt32(arc4random_uniform(3) + 1)) else {
-            fatalError()
+            fatalError("Incorrect random value")
         }
         
         return Chip(chipType: chipType)
